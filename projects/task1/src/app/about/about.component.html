@@ -1,0 +1,33 @@
+<div class="main">
+    <div class="form-container">
+        <div *ngFor="let item of Wings" class="form-row">
+            <label for="">{{item.Text}}</label>
+            <div *ngIf="item.Datatype === 'Date'"  class="gridii">
+                <dx-date-box></dx-date-box>
+            </div>
+            <div *ngIf="item.Datatype === 'string'" class="gridii">
+                <dx-text-box></dx-text-box>
+            </div>
+            <div *ngIf="item.Datatype === 'select'" class="gridii">
+                <dx-select-box [dataSource]="PartyCode"></dx-select-box>
+            </div>
+            <div *ngIf="item.Datatype === 'select1'" class="gridii">
+                <dx-select-box [dataSource]="ServiceTax"></dx-select-box>
+            </div>
+            <div *ngIf="item.Datatype === 'select2'" class="gridii">
+                <dx-select-box [dataSource]="Branch"></dx-select-box>
+            </div>
+            <div *ngIf="item.Datatype === 'select3'" class="gridii">
+                <dx-select-box [dataSource]="PartyAccount"></dx-select-box>
+            </div>
+            <div *ngIf="item.Datatype === 'select4'" class="gridii">
+                <dx-select-box [dataSource]="Transaction"></dx-select-box>
+            </div>
+            <div *ngIf="item.Datatype === 'select5'" class="gridii">
+                <dx-select-box [dataSource]="List"></dx-select-box>
+            </div>
+        </div>
+    
+    </div>
+</div>
+<hr>

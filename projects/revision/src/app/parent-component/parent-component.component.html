@@ -1,0 +1,30 @@
+
+<div class="mainContainer">
+<!-- <input type="text"  [(ngModel)]="hie">  // mvc approch
+<h1>{{hie}}</h1> -->
+
+<!-- <input type="text" name="oo" ngModel #oo="ngModel">   //mvvm approch
+{{oo.value}} -->
+    <p>parent-component works!</p>
+    <!-- <div *ngFor="let s of dataRes">   //Service
+        {{s.id}}
+        {{s.firstname}}
+        </div> -->
+
+
+        <table border="all">
+            <tr>
+                <th>id</th>
+                <th>firstname</th>
+            </tr>
+            <tr *ngFor="let i of dataRes">
+                <td>{{i.id}}</td>
+                <td>{{i.firstname}}</td>
+            </tr>
+        </table>
+<app-child-component [hiee]="hiee" (hiee1)="send($event)">   //viewChild
+    <!-- <h2 #emp>Abhishek kundan ajay babu</h2>    //contentchild -->
+</app-child-component>
+
+
+</div>

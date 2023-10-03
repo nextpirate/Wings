@@ -1,0 +1,58 @@
+<div>
+    <div  class="sh">
+       
+        <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+            <h2>Registration Form</h2>
+            <hr><hr>
+         <div class="ch">
+            <label >FirstName</label><br>
+            <input type="text" name="FirstName" ngModel #fname="ngModel" required><br>
+            <small *ngIf="fname.invalid && fname.touched">first name is required</small><br>
+            <label >lastName</label><br>
+            <input type="text" name="lastName" ngModel #lname="ngModel" required><br>
+            <small *ngIf="lname.invalid && lname.touched">last name is required</small><br>
+            <label >Gender</label><br>
+            <select name="Gender" id="" ngModel><br>
+                <option value="Male" >Male</option>
+                <option value="Female" >Female</option>
+                <option value="Other" >Other</option>
+            </select><br>
+            <label >Age</label><br>
+            <input type="number" name="Age" ngModel><br>
+            <input type="submit" [disabled]="!myForm.valid"><br>
+         </div>
+        </form>
+    </div>
+</div>
+<hr><hr>
+<div>
+    <div  class="sh">
+       
+        <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+            <h2>Registration Form</h2>
+            <hr><hr>
+         <div class="ch">
+            <div ngModelGroup="personal" #form="ngModelGroup"> 
+                <label >FirstName</label><br>
+            <input type="text" name="FirstName" ngModel #fname="ngModel" required><br>
+            <!-- <small *ngIf="fname.invalid && fname.touched">first name is required</small><br> -->
+            <label >lastName</label><br>
+            <input type="text" name="lastName" ngModel #lname="ngModel" required><br>
+            <!-- <small *ngIf="lname.invalid && lname.touched">last name is required</small><br> -->
+            </div>
+            <div>
+                <span *ngIf="form.invalid && form.touched">some values are remaining </span>
+            </div>
+            <label >Gender</label><br>
+            <select name="Gender" id="" ngModel><br>
+                <option value="Male" >Male</option>
+                <option value="Female" >Female</option>
+                <option value="Other" >Other</option>
+            </select><br>
+            <label >Age</label><br>
+            <input type="number" name="Age" ngModel><br>
+            <input type="submit" ><br>
+         </div>
+        </form>
+    </div>
+</div>

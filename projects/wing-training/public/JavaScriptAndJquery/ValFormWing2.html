@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+  .error {
+    color: red;
+  }
+  h1{
+    justify-content: center;
+    background-color: rgb(236, 159, 159);
+    text-align: center;
+  }
+ label{
+    margin-left: 15em;
+ }
+ input{
+    padding-right: 20px;
+  
+    height:20px
+ } 
+ #fullName{
+    margin-left:100px;
+ }
+ #Age{
+    margin-left:114px
+ }
+ .radio1{
+    margin-left: 25em;
+ }
+ #email{
+    margin-left: 101px;
+ }
+ #mobileNumber{
+    margin-left: 37px;
+ }
+#registrationForm{
+    height: 30em;
+    width: 70em;
+    background-color: rgb(200, 255, 127);
+    margin-left: 12em;
+}
+#buttons{
+    margin-left: 40em;
+    padding:10px
+}
+button{
+    width: 70px;
+    height: 35px;
+}
+#reset{
+    background-color: rgb(240, 99, 5);
+}
+#submitButton{
+    background-color: green;
+}
+</style>
+</head>
+<body>
+  <form id="registrationForm">
+   <div>
+    <h1>Registration Form</h1>
+    <label for="fullName">Name</label>
+    <input type="text" id="fullName" name="fullName" required>
+    <span class="error" id="nameError"></span><br><br>
+    <br>
+
+    <label for="Age">Age</label>
+    <input type="number" id="Age" name="Age" required min="1" max="99">
+    <span class="error" id="ageError"></span><br><br>
+    <br>
+
+    <div class="radio1">
+    <input type="radio" name="gender"  value="male" checked><span>Male</span>
+    <input type="radio" name="gender"  value="female"><span>Female</span>
+    <input type="radio" name="gender"  value="other"><span>Others</span><br><br>
+    </div>
+    <br>
+
+    <label for="email">Email</label>
+    <input type="email" id="email"  required>
+    <span class="error" id="emailError"></span><br><br>
+    <br>
+
+    <label for="mobileNumber">Mobile Number</label>
+    <input type="tel" id="mobileNumber" name="mobileNumber" required>
+    <span class="error" id="mobileError"></span><br><br>
+    <br>
+    <div id="buttons">
+    <button type="submit" id="submitButton" disabled>Submit</button>
+    <button type="reset" id="reset">Reset</button>
+    </div>
+   </div>
+  </form>
+
+  <script>
+    const fullNameInput = document.getElementById('fullName');
+    const emailInput = document.getElementById('email');
+    const mobileNumberInput = document.getElementById('mobileNumber');
+    const AgeInput = document.getElementById('Age');
+    const GenderInput = document.getElementsByName('gender');
+    const emailError = document.getElementById('emailError');
+    const nameError = document.getElementById('nameError');
+    const ageError = document.getElementById('ageError');
+    const mobileError = document.getElementById('mobileError');
+    const submitButton = document.getElementById('submitButton');
+
+    emailInput.addEventListener('change', () => {
+      const emailValue = emailInput.value;
+      if (!emailValue.includes('@') || !emailValue.includes('.com')) {
+        emailError.textContent = 'E-mail not valid. please put correct E-mail';
+      } else {
+        emailError.textContent = '';
+      }
+      updateSubmitButton();
+    });
+
+    mobileNumberInput.addEventListener('change', () => {
+      const mobileNumber = mobileNumberInput.value;
+      if (mobileNumber.length !== 10) {
+        mobileError.textContent = 'Mobile number should be 10 digits';
+      } else {
+        mobileError.textContent = '';
+      }
+      updateSubmitButton();
+    });
+
+    fullNameInput.addEventListener('change', () => {
+      const namee = fullNameInput.value;
+      if (namee.trim() === '') {
+        nameError.innerText = '';
+      } 
+     else {
+      nameError.innerText = '';
+      }
+      updateSubmitButton(); 
+    });
+
+    AgeInput.addEventListener('change', () => {
+      const ageNumber = Number(AgeInput.value);
+      if (ageNumber <= 17) {
+        ageError.innerText = 'less thaN 18 INVALID';
+      } 
+      else if (ageNumber >= 66) {
+        ageError.innerText = 'greater than 65 INVALID';
+      } else {
+        ageError.innerText = '';
+      }
+      updateSubmitButton(); 
+    });
+
+    function updateSubmitButton() {
+      if (emailError.textContent === '' && mobileError.textContent === '' && ageError.innerText === '' && fullNameInput.value && 
+      emailInput.value && mobileNumberInput.value && AgeInput.value && GenderInput.values && nameError.innerText === '') {
+        submitButton.removeAttribute('disabled');
+      }
+     else {
+        submitButton.setAttribute('disabled', 'true');
+      }
+    }
+
+    
+
+    document.getElementById('registrationForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+    // const genders = GenderInput
+      let _gender;
+        for (let i = 0; i < GenderInput.length; i++) {
+                if(GenderInput[i].checked){
+                _gender = GenderInput[i].value;
+                break;
+                }
+        }
+      const formData = {
+        fullName: fullNameInput.value,
+        email: emailInput.value,
+        mobileNumber: mobileNumberInput.value,
+        Age: AgeInput.value,
+        gender: _gender,
+      };
+      saveFormData(formData);
+      resetForm();
+      alert('Form submitted successfully and data saved to local storage.');
+    });
+
+    function saveFormData(formData) {
+      let existingData = JSON.parse(localStorage.getItem('registrationData')) || [];
+      existingData.push(formData);
+      localStorage.setItem('registrationData', JSON.stringify(existingData));
+    }
+
+    function resetForm() {
+      fullNameInput.value = '';
+      emailInput.value = '';
+      mobileNumberInput.value = '';
+      AgeInput.value='';
+      GenderInput.value='';
+      emailError.textContent = '';
+      mobileError.textContent = '';
+      submitButton.setAttribute('disabled', 'true');
+    }
+  </script>
+</body>

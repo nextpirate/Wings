@@ -1,0 +1,258 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html,body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.7em;
+}
+
+h1,h2,h3{
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+#navbar{
+    background-color: black;
+    color: white;
+    display: flex;
+    overflow: auto; 
+    height: 50px;
+    margin-top: 10px;
+    text-align: center;
+}
+#navbar ul{
+    list-style: none;    
+   padding-left: 1100px;  
+   padding-top: 10px;
+    
+}
+
+li{
+    margin-left: 30px;
+    float: left;
+    
+}
+
+#navbar ul li a:hover{
+    /* color: #487ead; */
+    background-color: #487ead;
+}
+#navbar h1{
+    padding-top: 20px;
+}
+#navbar ul li a{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    
+}
+#showcase{
+    background: url("../public/R.jpg"); 
+    height: 600px; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 2s;
+}
+
+#showcase:hover{
+    background: url("../public/R.jpg"); 
+    height: 620px; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 2s;
+}
+
+#container{
+    margin: auto;
+    max-width: 1100px;
+    overflow: auto;
+    padding: 0px 20px;
+}
+#showcase #showcase-content h1{
+    font-size: 60px;
+    line-height: 1.2em;
+}
+#showcase #showcase-content p{
+    padding-bottom: 20px;
+    line-height: 1.7em;
+    text-align:center;
+}
+#showcase #showcase-content{
+    color: #fff;
+    text-align: center;
+    padding-top: 170px;
+}
+#showcase #showcase-content a{
+    text-decoration: none;
+    color: #333;
+    transition: 2s;
+    font-size: 25px;
+    background-color: #b11010;
+    
+}
+#showcase #showcase-content a:hover{
+    text-decoration: none;
+    color: #1e9187;
+    transition: 2s;
+}
+.text-primary{
+    color: #34817d;
+}
+.lead{
+    font-size: 20px;
+}
+.btn{
+    display: inline-block;
+    font-size: 18px;
+    color: aliceblue;
+    background: #333;
+    padding: 17px 20px;
+    margin-top: 10px;
+}
+.btn:hover{
+    display: inline-block;
+    font-size: 23px;
+    color: aliceblue;
+    background: #2a8044;
+    transition: 1s;
+}
+
+
+.btn-light{
+    background: #f4f4f4;
+    color: #333;
+}
+#home_info{
+    height: 400px;
+}
+.info_img{
+ float: left;
+ width: 50%;
+ background: url("../public/OIP\ \(1\).jpg") no-repeat;
+ background-size: 100% 400px;
+ min-height: 100%;
+}
+ .info_content{
+    float: right;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding: 50px 30px;
+    overflow: hidden;
+}
+#home_info .info_content p{
+    padding-bottom: 30px;
+}
+.bg-dark{
+    background: #333;
+    color: #fff;
+    
+}
+.bg-light{
+    background: #f4f4f4;
+    color: #333;
+}
+.bg-primary{
+    background: #f7c08a;
+    color: #333;
+}
+.box{
+    float: left;
+    width: 33.3%;
+    padding: 50px;
+    text-align: center;
+}
+.box i{
+    margin-bottom: 10px;
+}
+
+.box i:hover{
+    margin-bottom: 10px;
+    background-color: #fff444;
+    color: #b30202;
+   
+}
+h3:hover{
+    transition: 1s;
+    color: #b30202;
+}
+
+footer{
+    text-align: center;
+    background: #444;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+label{
+    display: block;
+}
+input, textarea{
+    display: block;
+    outline: none;
+    box-shadow: 1px 1px 1px rgb(167, 80, 68);
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 3px;
+}
+input, textarea .untouched:hover{
+    display: block;
+    outline: none;
+    box-shadow: 1px 1px 1px rgb(167,0,0);
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 3px;
+}
+
+
+#form_input{
+    height: 700px;
+    background: url("../public/OIP\ \(7\).jpg") no-repeat;
+    background-size: cover;  
+}
+#shre{
+    text-align: center;
+    color: rgb(183, 183, 209);
+    border-radius: 5%;
+    
+}
+#bttt{
+    margin-top: 20px;
+    text-align: center;
+    color: aqua;
+    border-radius: 5%;
+}
+#vi{
+    background-color: white;
+    color: #487ead;
+    height: 550px;
+    width: 300px;
+    margin-left: 650px; 
+    padding: 30px;
+    
+}
+.about_section{
+    height: 400px;
+}
+.about_section1{
+    height: 600px;
+}
+.info_img1{
+    float: right;
+    width: 50%;
+    background: url("../public/OIP\ \(2\).jpg") no-repeat;
+    background-size: 100% 400px;
+    min-height: 100%;
+   }
+    .info_content1{
+       float: left;
+       width: 50%;
+       height: 100%;
+       text-align: center;
+       padding: 50px 30px;
+       overflow: hidden;
+   }

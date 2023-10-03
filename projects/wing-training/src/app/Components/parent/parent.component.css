@@ -1,0 +1,12 @@
+#parent{
+    background-color: aquamarine;
+    color:black;
+    height: 1000px;
+    width: 700px;
+}
+h2{
+    margin-bottom: 30px;
+}
+button{
+    margin: 40px;
+}

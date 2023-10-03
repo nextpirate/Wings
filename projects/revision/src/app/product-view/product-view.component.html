@@ -1,0 +1,42 @@
+<div class="fluid-container">
+    <h3>Printer</h3>
+    <div class="row">
+        <nav class="col-2">
+            <div class="border border2 border-primary mb-2" style="width: 55px;">
+                <img src="../../assets/download1.jpg" alt=""
+                    (mouseover)="MouseOverProduct('view1')" height="'50" width="50">
+            </div>
+            <div class="border border2 border-primary mb-2" style="width: 55px;">
+                <img src="../../assets/download2.jpg"
+                    (mouseover)="MouseOverProduct('view2')" height="'50" width="50">
+            </div>
+            <div class="border border2 border-primary mb-2" style="width: 55px;">
+                <img src="../../assets/download3.jpg" alt=""
+                    (mouseover)="MouseOverProduct('view3')" height="'50" width="50">
+            </div>
+            <div class="border border2 border-primary mb-2" style="width: 55px;">
+                <img src="../../assets/download4.jpg" alt=""
+                    (mouseover)="MouseOverProduct('view4')" height="'50" width="50">
+            </div>
+        </nav>
+        <div class="col-10">
+            <div *ngIf="true; then thenBlock"></div>
+            <ng-template #view1>
+                <img src="../../assets/download1.jpg" alt=""
+                    height="'400" width="400">
+            </ng-template>
+            <ng-template #view2>
+                <img src="../../assets/download2.jpg" alt=""
+                    height="'400" width="400">
+            </ng-template>
+            <ng-template #view3>
+                <img src="../../assets/download3.jpg" alt=""
+                    height="'400" width="400">
+            </ng-template>
+            <ng-template #view4>
+                <img src="../../assets/download4.jpg" alt=""
+                    height="'400" width="400">
+            </ng-template>
+        </div>
+    </div>
+</div>

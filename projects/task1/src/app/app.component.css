@@ -1,0 +1,38 @@
+ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #a75d5d;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:active{
+    color:red;
+    background-color: #111;
+  }
+  
+  
+
+
+@media screen and (max-width: 768px) {
+    li{
+        display: block;
+        width: 100%;
+        
+    }
+    ul{
+        padding:  0 10px 10px;
+    }
+}

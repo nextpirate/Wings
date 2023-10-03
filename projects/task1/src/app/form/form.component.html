@@ -1,0 +1,44 @@
+  <div id="main">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <h1>Login Form</h1><hr>
+      <div id="sub">
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username" #UUsername>
+        <div></div>
+        <div *ngIf="userForm.get('username')?.touched && userForm.get('username')?.invalid" id="subbb">
+          <div *ngIf="userForm.get('username')?.hasError('required')">Username is required.</div>
+        </div>
+        
+      </div>
+      
+      <div id="sub">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" #PPassword>
+        <div></div>
+       <div  id="subbb">
+        <div *ngIf="userForm.get('password')?.touched && userForm.get('password')?.invalid">
+          <div *ngIf="userForm.get('password')?.hasError('required')">Password is required.</div>
+          <div *ngIf="userForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</div>
+        </div>
+        <div></div>
+    
+        <div *ngIf="userForm.hasError('passwordsNotMatch') && userForm.get('confirmPassword')?.touched" >
+          Passwords do not match.
+        </div>
+       </div>
+      </div>
+      
+      <div id="sub">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword">
+        <div></div>
+        <div *ngIf="userForm.get('confirmPassword')?.touched && userForm.get('confirmPassword')?.invalid" id="subbb">
+          <div *ngIf="userForm.get('confirmPassword')?.hasError('required') && userForm.get('confirmPassword')?.touched">
+            Confirm Password is required.
+          </div>
+        </div>
+      </div>
+      
+      <button type="submit" [disabled]="userForm.invalid" id="button">Submit</button>
+    </form>
+  </div>

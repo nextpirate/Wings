@@ -1,0 +1,13 @@
+@import '../../../../../../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '../../../../../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+.row{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,55 @@
+<!-- [columns] = setting columns
+[dataSource] = which data u want
+[showBorders]= border purpose
+[allowColumnReordering]= reordering columns we can put any column anywhere in column list
+[allowColumnResizing]= resize the column width
+[columnAutoWidth]=how much data in that column it will fix the size of column -->
+<dx-data-grid
+  id="gridContainer"
+  [dataSource]="customers"
+  keyExpr="ID"
+  [columns]="['CompanyName', 'City', 'State', 'Phone', 'Fax']"
+  [showBorders]="true"
+  [allowColumnReordering]="true"
+  [allowColumnResizing]="true"
+   [columnAutoWidth]="true">
+>
+<!-- dxo-filter-row is for icon and searching purpose -->
+<dxo-filter-row [visible]="true"></dxo-filter-row>
+<!-- dxo-header-filter is used for filtering purpose and icon in that header purpose -->
+<dxo-header-filter [visible]="true"></dxo-header-filter>
+<!-- dxo-group-panel is used for in panel we can drag and drop and also remove that column from that column list -->
+<dxo-group-panel [visible]="true"></dxo-group-panel>
+<!-- dataField is used for column name -->
+<dxi-column
+        dataField="CompanyName"
+       
+        >
+    </dxi-column>
+     <!-- visible false is for hiding column -->
+    <dxi-column
+        dataField="City"
+        [width]="200"
+        [visible]="false">
+    </dxi-column>
+    <!-- for hiding column we can choose also -->
+    
+    <dxo-column-chooser [enabled]="true"></dxo-column-chooser>  
+    
+    <dxi-column
+        dataField="State"  
+        
+        >
+    </dxi-column>
+    <dxi-column
+        dataField="Phone"
+        
+        >
+    </dxi-column>
+    <dxi-column
+        dataField="Fax"
+        
+        >
+    </dxi-column>
+    
+</dx-data-grid>

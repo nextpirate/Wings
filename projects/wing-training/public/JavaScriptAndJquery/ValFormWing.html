@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        #sub{
+            display: grid;
+            grid-template-columns: 2fr 5fr 5fr;
+            margin-bottom: 30px;
+        }
+        #main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 740px; 
+
+        }
+        form{
+            position: relative;
+            max-height: 500px;
+            width: 700px;
+            border: 2px solid black;
+           
+        }
+        label{
+            padding: 0px 0px 0px 20px;
+        }
+        h1{
+             position: relative;
+            padding: 20px 0;
+            background-color: black;
+            color: #fff;
+            top: -23px;
+            text-align: center;
+        }
+        #sub1{
+            
+            margin-bottom: 30px;
+        }
+        #s1{
+            margin-left: 120px;
+        }
+        button{
+            margin-left: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form  on="return shfunction()" onsubmit="return subbb()">
+            <h1>Registration Form</h1>
+            <div id="sub">
+                <label for="">Name</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div id="sub">
+                <label for="">Age</label>
+                <input type="text" id="age" name="username">
+            </div>
+              <div id="sub1">
+                <input type="radio" value="male" id="s1" name="gender">Male
+                <input type="radio" value="female" id="s1" name="gender">Female
+                <input type="radio" value="Other" id="s1" name="gender">Other
+              </div>
+            <div id="sub">
+                <label for="">Mobile No:</label>
+                <input type="number" id="num" name="username">
+                <span id="span1"></span>
+            </div>
+            <div id="sub">
+                <label for="">E-mail:</label>
+                <input type="email" id="mail" name="username">
+                <span  id="span2"></span>
+            </div>
+            <div>
+                <span id="local"></span>
+            </div>
+            <div id="sub">
+               <div></div>
+               <div></div>
+               <div id="sub3">
+                <button type="submit" id="shh1"  disabled>Submit</button>
+                <button type="reset" id="shh2">Cancel</button>
+               </div>
+            </div>
+        </form> 
+    </div>
+    <script>
+        var user = document.getElementById("username").value;
+            var age = document.getElementById("age").value;
+                var n = document.getElementById("num").value;
+                var m =document.getElementById("mail").value;
+                var t1 = document.getElementById("span1");
+                var t2 =document.getElementById("span2");
+                var t3 = document.getElementById("local");
+                var subbu = document.getElementById("shh1");
+                
+                var n1 = /^[0-9]{10}$/
+                var m1 = /^[a-z0-9]{1,}(@gmail\.com)$/g
+                
+           function shfunction(){
+            
+
+          
+                if(!(n1.test(n))){
+                    console.log("false 1")
+                   
+                    t1.innerHTML = "**Mobile no should be 10 digits";
+                    
+                    return false;
+                }
+                else if(!(m1.test(m))){
+                    console.log("false 1")
+                    t2.innerHTML = "**Email not valid,Please put currect e-mail";
+                    
+                    
+                    return false;
+                }
+                else{
+                    console.log("tru 1")
+                    t1.innerHTML="";
+                    t2.innerHTML="";
+                   
+                    subbu.getAttribute('disabled','false')
+                    return true
+            }
+        }
+            function subbb(){
+                localStorage.setItem("users",user);
+                localStorage.setItem("age",age);
+                    localStorage.setItem("number",n);
+                    localStorage.setItem("email",m);
+            }
+    </script>
+    
+</body>
+</html>

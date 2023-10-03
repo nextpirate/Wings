@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        label,input{
+            display: block;
+            margin: 5px;
+        }
+        button{
+            margin-top: 10px;
+        }
+        
+        span{
+            color: red;
+            height: auto;
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body>
+   <div id="main">
+    
+    <form action="./index.html" name="myForm" onsubmit="return myFunction()">
+        <h1>Login</h1>
+        <div>
+            <label for="username">username</label>
+            <input type="text" id="username" name="username">
+            <span>Username Should have one Uppercase,one number</span>
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="password" id="password" name="password">
+            <span>Username Should have one Uppercase,one number,</span>
+        </div>
+        <div>
+            <label for="email">email</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="mob">Telephone</label>
+            <input type="mob" id="mob" name="mob">
+        </div>
+        <button type="submit">sUBmit</button>
+    </form>
+   </div>
+   <script>
+   function myFunction(){
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+    var mob = document.getElementById("mob").value;
+
+    let userss = /^[a-z0-9]{5-12}$/ ;
+   let emailss =/^[a-zA-Z0-9]{5,}[@gmail\.com]$/
+    
+    if(userss.test(user)){
+        console.log("submit clicked")
+        return true;
+    }
+    else{
+        console.log("false")
+        return false;
+    }
+   }
+   </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+form{
+    background-color: aqua;
+    color: brown;
+    height: 500px;
+    width: 500px;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input.ng-invalid.ng-touched{
+    border: red 1px solid;
+}

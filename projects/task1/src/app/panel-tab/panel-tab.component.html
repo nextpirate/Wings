@@ -1,0 +1,133 @@
+<!-- <div *dxTemplate="let tabTitle of 'title'">
+        <span>{{tabTitle.tabName}}</span>
+    </div>
+ 
+    <div *dxTemplate="let company of 'item'">
+       
+         <table border="all">
+            <tr>
+                <th>{{company.column1}}</th>
+            </tr>
+            <tr>
+                <td>{{company.id}}</td>
+            </tr>
+         </table>
+  
+    </div> -->
+<dx-tab-panel [dataSource]="tabColumnData">
+    <div *dxTemplate="let tabTitle of 'title'" class="bca">
+        <span class="abc">{{tabTitle.tabName}}</span>
+    </div>
+    <div *dxTemplate="let item of 'item'">
+        <div *ngIf="item.singleRow && item.tabName=='Tab1'">
+            <dx-data-grid [dataSource]="tabDataSource"  [showBorders]="false">
+                <div>
+                    <dxi-column [dataField]="item.columnName"></dxi-column>
+                </div>
+            </dx-data-grid>
+        </div>
+        <div *ngIf="!item.singleRow && item.tabName=='Tab2'">
+            <div *ngFor="let item of Wings" class="form-row">
+                <label for="">{{item.Text}}</label>
+                <div *ngIf="item.Datatype === 'Date'"  class="gridii">
+                    <dx-date-box></dx-date-box>
+                </div>
+                <div *ngIf="item.Datatype === 'string'" class="gridii">
+                    <dx-text-box></dx-text-box>
+                </div>
+                <div *ngIf="item.Datatype === 'select'" class="gridii">
+                    <dx-select-box [dataSource]="PartyCode"></dx-select-box>
+                </div>
+                <div *ngIf="item.Datatype === 'select1'" class="gridii">
+                    <dx-select-box [dataSource]="ServiceTax"></dx-select-box>
+                </div>
+                <div *ngIf="item.Datatype === 'select2'" class="gridii">
+                    <dx-select-box [dataSource]="Branch"></dx-select-box>
+                </div>
+                <div *ngIf="item.Datatype === 'select3'" class="gridii">
+                    <dx-select-box [dataSource]="PartyAccount"></dx-select-box>
+                </div>
+                <div *ngIf="item.Datatype === 'select4'" class="gridii">
+                    <dx-select-box [dataSource]="Transaction"></dx-select-box>
+                </div>
+                <div *ngIf="item.Datatype === 'select5'" class="gridii">
+                    <dx-select-box [dataSource]="List"></dx-select-box>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+       
+    
+</dx-tab-panel>
+<!-- <dx-tab-panel [dataSource]="tabDataSources">
+            <div *dxTemplate="let tabTitle of 'title'">
+              <span>{{tabTitle.tabName}}</span>
+            </div>
+            <div *dxTemplate="let item of 'item'">
+              <dx-data-grid id="gridContainer" [dataSource]="customers" keyExpr="ID" [columns]="sab" [showBorders]="true">
+              </dx-data-grid>
+            </div>
+          </dx-tab-panel> -->
+
+<!-- <dx-data-grid
+  id="gridContainer"
+  [dataSource]="tabDataSources"
+  keyExpr="EmployeeID"
+  [columns]="tabDataSources.column1"
+  [showBorders]="true"
+>
+</dx-data-grid> -->
+
+
+<!-- <dxi-item title="Grid" icon="mediumiconslayout">
+        <dx-data-grid [dataSource]="employees"  [allowColumnResizing]="true"
+        [columnAutoWidth]="true">
+            <dxi-column dataField="id"  [width]="100">
+                
+            </dxi-column>
+            <dxi-column dataField="FullName" [width]="100"></dxi-column>
+            <dxi-column dataField="BirthDate" dataType="date" dataField="BirthDate" [width]="100">
+            </dxi-column>
+            <dxi-column dataField="Address" dataField="Address" [width]="100">
+            </dxi-column>
+
+        </dx-data-grid>
+    </dxi-item>
+    <dxi-item title="InputFields" icon="contains">
+        <div class="main">
+            <div class="form-container">
+                <div *ngFor="let item of Wings" class="form-row">
+                    <label for="">{{item.Text}}</label>
+                    <div *ngIf="item.Datatype === 'Date'"  class="gridii">
+                        <dx-date-box></dx-date-box>
+                    </div>
+                    <div *ngIf="item.Datatype === 'string'" class="gridii">
+                        <dx-text-box></dx-text-box>
+                    </div>
+                    <div *ngIf="item.Datatype === 'select'" class="gridii">
+                        <dx-select-box [dataSource]="PartyCode"></dx-select-box>
+                    </div>
+                    <div *ngIf="item.Datatype === 'select1'" class="gridii">
+                        <dx-select-box [dataSource]="ServiceTax"></dx-select-box>
+                    </div>
+                    <div *ngIf="item.Datatype === 'select2'" class="gridii">
+                        <dx-select-box [dataSource]="Branch"></dx-select-box>
+                    </div>
+                    <div *ngIf="item.Datatype === 'select3'" class="gridii">
+                        <dx-select-box [dataSource]="PartyAccount"></dx-select-box>
+                    </div>
+                    <div *ngIf="item.Datatype === 'select4'" class="gridii">
+                        <dx-select-box [dataSource]="Transaction"></dx-select-box>
+                    </div>
+                    <div *ngIf="item.Datatype === 'select5'" class="gridii">
+                        <dx-select-box [dataSource]="List"></dx-select-box>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <hr>
+    </dxi-item>
+    <dxi-item title="Other" icon="add">
+    </dxi-item> -->

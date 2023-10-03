@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (orientation:landscape) {
+            ul{
+                list-style: none;
+                display: flex;
+            }
+            li{
+                background-color: red;
+                color: white;
+                padding: 5px;
+                width: 200px;
+                border: 1px solid black;
+                border-radius: 20px;
+                margin-right: 20px;
+                font-size: 23px;
+                transition: 2s;
+
+            }
+            li:hover{
+                background-color: black;
+                color: white;
+                cursor: grab;
+                font-size: 30px;
+                transition: 2s;
+            }
+        }
+        @media screen and (orientation:portrait) {
+            ul{
+                list-style: none;
+                
+            }
+            li{
+                background-color: red;
+                color: white;
+                padding: 5px;
+                width: 200px;
+                border: 1px solid black;
+                border-radius: 20px;
+                margin-right: 20px;
+                font-size: 23px;
+                transition: 2s;
+
+            }
+            li:hover{
+                background-color: black;
+                color: white;
+                cursor: grab;
+                font-size: 30px;
+                transition: 2s;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <h2>Navigation bar</h2>
+    <nav>
+        <ul>
+            <li><span class="bi bi-house-fill"></span><span>Home</span></li>
+            <li><span class="bi bi-person"></span><span>Login</span></li>
+            <li><span class="bi bi-bell"></span><span>NotiFication</span></li>
+            <li><span class="bi bi-globe"></span><span>Network</span></li>
+        </ul>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+       <div formGroupName="personalDetails">
+        <label for="name">firstName</label><br>
+        <input type="text" placeholder="firstname" formControlName="firstname"><br>
+        <label for="name">lastName</label><br>
+        <input type="text" placeholder="lastname" formControlName="lastname"><br>
+       </div><br>
+        <select name="gender" formControlName="gender"><br>
+            <option value="male">m</option>
+            <option value="female">f</option>
+            <option value="other">o</option>
+        </select>
+        <button>Submit</button>
+    </form>
+</div>

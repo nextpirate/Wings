@@ -1,0 +1,61 @@
+<dx-radio-group [dataSource]="search" layout="horizontal" #radio (onValueChanged)="value($event)">
+</dx-radio-group>
+
+<dx-text-box #box1 [width]="200" placeholder="search...">
+
+</dx-text-box>
+<dx-button type="success" text="Go" (onClick)="click()">
+</dx-button>
+
+<dx-data-grid id="gridContainer" [dataSource]="selectBoxData" [showBorders]="true"  #RegN>
+    <dxi-column dataField=RegistrationNumber caption="Registration No">
+    </dxi-column>
+    <dxi-column dataField=ChassisNumber [width]="200" [visible]="true" caption="Classis Number">
+    </dxi-column>
+    <dxi-column dataField=VehicleModel caption="Vehicle Model">
+    </dxi-column>
+    <dxi-column dataField=Customer caption="Customer">
+    </dxi-column>
+    <dxi-column dataField=MobileNumber caption="Mobile Number">
+    </dxi-column>
+    <dxi-column dataField=ReferenceNumber caption="Reference Number">
+    </dxi-column>
+    <dxi-column dataField=PanNumber caption="PAN Number">
+    </dxi-column>
+    <dxo-search-panel [visible]="true" [highlightCaseSensitive]="true"></dxo-search-panel>
+    <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+</dx-data-grid>
+
+<!-- note:
+
+visible false is for hiding column
+<dxi-column dataField=ChassisNumber [width]="200" [visible]="true" caption="Classis Number">
+for hiding column we can choose also
+<dxo-column-chooser [enabled]="true"></dxo-column-chooser> -->
+
+<!-- <div class="search-container">
+    <input
+      type="text"
+      placeholder="Search..."
+      (input)="onSearch()">
+  </div> -->
+
+
+    <!-- <dx-select-box
+    [dataSource]="selectBoxData"
+    valueExpr="id"
+    displayExpr="country"
+    [searchEnabled]="true"
+    searchExpr="country"
+    searchMode="startswith">
+</dx-select-box> -->
+    <!-- <dxo-header-filter [visible]="true"></dxo-header-filter>
+    <dxi-column [allowHeaderFiltering]="false" ></dxi-column> -->
+
+
+
+    <!-- <div class="dx-fieldset">
+        <div class="dx-fieldset-header">Search</div>
+        <dx-radio-group [dataSource]="search" layout="horizontal">
+        </dx-radio-group>
+    </div> -->

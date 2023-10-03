@@ -1,0 +1,87 @@
+<!-- <div  [ngClass]="'g1'">
+    <form [formGroup]="login">
+      <h1>reactive forms</h1>
+      <label for="">userNSame</label><br>
+      <input type="text" formControlName="uname" >
+   
+      <br><br>
+      <label for="">Password</label><br>
+      <input type="password" formControlName="password" >
+      <br><br>
+      <label for="">Date of Birth</label><br>
+      <input type="date" formControlName="date" >
+      <br> <br>
+      <label for="">Email</label><br>
+      <input type="text" formcontrolName="email"><br><br>
+      <button (click)="shows()">submit</button>
+      
+    </form>
+  </div> -->
+
+  <!-- <dx-form id="form">
+    <dxi-item itemType="group" cssClass="first-group" [colCount]="7" >
+      <dxi-item>
+        <div class="form-avatar"></div>
+      </dxi-item>
+      <dxi-item itemType="group" [colSpan]="3">
+        <dxi-item dataField="Username" name="cp"></dxi-item>
+        <dxi-item dataField="Password" name="cp"></dxi-item>
+        <dxi-item dataField="Confirm Password" name="cp"></dxi-item>
+      </dxi-item>
+    </dxi-item>
+  </dx-form> -->
+
+  <div id="main">
+    <form  [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <h1>Registration Form</h1>
+        <div id="sub">
+            <label for="">Username</label>
+            <input type="text" id="username" formControlName="user" #UUsername>
+            <!-- <span *ngIf="users && users.invalid && users.touched" style="color: red;">Username is invalid</span> -->
+        </div>
+        <div id="sub">
+            <label for="">Password</label>
+            <input type="password" id="password"  formControlName="password" #PPassword>
+            <!-- <span *ngIf="pass && pass.invalid && pass.touched" style="color: red;">Password is invalid</span> -->
+        </div>
+        <div id="sub">
+          <label for="">Confirm Password</label>
+          <input type="password" id="cpassword"  formControlName="cpassword" #cPPassword>
+          <!-- <span *ngIf="loginForm.hasError('passwordsNotMatch', 'cpassword')" style="color: red;">Password not Match </span> -->
+
+      </div>
+      <div *ngIf="loginForm.hasError('passwordsNotMatch', 'cpassword')">
+        Passwords do not match.
+      </div>
+      
+        
+        <div id="sub">
+           <div></div>
+           <div></div>
+           <div id="sub3">
+            <button type="submit" id="shh1" [disabled]="loginForm.invalid">Submit</button>
+            &nbsp;
+            <button type="reset" id="shh2">Cancel</button>
+           </div>
+        </div>
+    </form> 
+</div>
+
+<!-- <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username">
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password">
+  </div>
+  <div>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" formControlName="confirmPassword">
+  </div>
+  <div *ngIf="loginForm.hasError('passwordsNotMatch', 'confirmPassword')">
+    Passwords do not match.
+  </div>
+  <button type="submit">Submit</button>
+</form> -->

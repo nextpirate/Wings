@@ -1,0 +1,14 @@
+<div id="parent">
+    <h2 >Parent Component</h2>
+    <h6>Data recieved from child</h6>
+    {{user.name }} <br>
+    {{user.age }} <br>
+    
+    <button (click)="sendClick()">Button</button>
+    <app-child [msgfromParent]="msg" [obj]="ob" [arr]="arrr" (msgfromChild)="parentElement($event)"></app-child>
+
+</div>
+<label for="">dob</label>
+<input type="date" #inputdate (blur)="calculateAge()">
+<label for="">age</label>
+<input type="text" #inputage>
