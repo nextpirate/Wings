@@ -3,7 +3,8 @@ Many thing in this project <br>
 # 1. In Project Folder,there is revision folder: <br>
 a) src/app/content-projection :-in content-projection,we used Angular @ViewChild,Switch Case <br>
 b) src/app/ForRoutegardsssComponent :-in ForRoutegardsssComponent, we used only routing things not much we explore but we explore these things later in our project <br>
-c) src/app/app-parent-component :-in app-parent-component, Here we explore many things ,first we created Child-component for ViewChild,ViewChildren,ContentChild,ContentChildren,Input,Output 
+c) src/app/app-parent-component :-in app-parent-component, Here we explore many things ,first we created Child-component for ViewChild,ViewChildren,ContentChild,ContentChildren,Input,Output <br>
+d) src/app/app-product-view : Here we use switch cases and also we use <b> mouseOver event </b>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
 
