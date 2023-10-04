@@ -3,8 +3,17 @@ Many thing in this project <br>
 # 1. In Project Folder,there is revision folder: <br>
 a) src/app/content-projection :-in content-projection,we used Angular <b> @ViewChild,Switch Case </b> <br>
 b) src/app/ForRoutegardsssComponent :-in ForRoutegardsssComponent, we used only routing things not much we explore but we explore these things later in our project <br>
-c) src/app/app-parent-component :-in app-parent-component, Here we explore many things ,first we created Child-component for <b> ViewChild,ViewChildren,ContentChild,ContentChildren,Input,Output </b> <br>
+c) src/app/app-parent-component :-in app-parent-component, Here we explore many things ,first we created Child-component for <b> @ViewChild,@ViewChildren,@ContentChild,@ContentChildren,@Input,@Output,Also HttpClient Services </b> <br>
 d) src/app/app-product-view : Here we use switch cases and also we use <b> mouseOver event </b>
+# 2. In Project Folder,there is task1 folder: <br> 
+Here we used routing deeply and alse we used <b> Devxtreme Library <br>
+a) src/app/app-about,Here we used Reactive inputs using array <br>
+b) src/app/app-accordian,Here we used <b> Devxtreme Library/Accordian </b><br>
+c) src/app/app-contact,Here we used reactive form using angular <br>
+d) src/app/app-data-grid,Here we used  <b> Devxtreme Library/DataGrid </b><br>
+f) src/app/app-form,Here we used reactive form using angular <br>
+g) src/app/app-home,Here we used  <b> Devxtreme Library/Popup </b><br>
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
 
