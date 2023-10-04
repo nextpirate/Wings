@@ -13,6 +13,12 @@ c) src/app/app-contact,Here we used reactive form using angular <br>
 d) src/app/app-data-grid,Here we used  <b> Devxtreme Library/DataGrid </b><br>
 f) src/app/app-form,Here we used reactive form using angular <br>
 g) src/app/app-home,Here we used  <b> Devxtreme Library/Popup </b><br>
+h) src/app/app-notfound,Here it is default for routing purpose not found thing<br>
+i) src/app/app-panel-tab,Here we used  <b> Devxtreme Library/PanelTab </b>  And many things<br>
+j) src/app/app-radio-button-selection,Here we used  <b> Devxtreme Library/Usung Search option,some logic for searchbar </b><br>
+k) src/app/app-select-box-search,Here we used  same like app-radio-button-selection we tried this things<br>
+l) In service folder we created services for all these component. <br>
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
